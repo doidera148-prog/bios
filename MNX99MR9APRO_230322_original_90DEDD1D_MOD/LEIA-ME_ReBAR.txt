@@ -1,0 +1,24 @@
+ReBAR nativo (sem programa no Windows) - X99 BIOS Editor
+========================================================
+Esta BIOS tem o ReBAR no modo NATIVO: ele liga sozinho quando a placa esta
+no estado certo, sem precisar rodar nenhum .exe no Windows.
+
+PASSO A PASSO
+  1) Grave a _MOD.rom na placa com o CH341A (16 MB, chip inteiro).
+  2) Entre na BIOS e deixe assim:
+       - Above 4G Decoding = Enabled
+       - CSM / Compatibility Support Module = Disabled
+     Salve e reinicie.
+  3) Pronto: o ReBAR ativa sozinho. Confira no GPU-Z se 'Resizable BAR'
+     ficou 'Enabled'.
+
+COMO FUNCIONA
+  O driver so ativa o ReBAR quando o CSM esta desligado E o Above-4G ligado
+  (igual a um ReBAR nativo de fabrica). Se faltar um dos dois ele fica
+  inerte - nunca brica e a tela da BIOS nunca corrompe. Pra desligar, basta
+  religar o CSM ou desligar o Above-4G.
+
+OBS: driver gated baseado no ReBarUEFI (codigo aberto). Use por sua conta e
+risco. Modificar BIOS tem risco de brick - faca backup do dump original antes.
+
+@OPCzao - https://www.youtube.com/@OPCzao
